@@ -54,7 +54,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-2">
           {isAuthenticated ? (
             <>
-              <Button asChild variant="ghost" className="text-sea hover:text-sea-dark">
+              <Button asChild variant="outline" className="border-sea/30 text-sea hover:bg-sea hover:text-white">
                 <Link to="/dashboard">
                   <User className="mr-2 h-4 w-4" />
                   Minha Conta
