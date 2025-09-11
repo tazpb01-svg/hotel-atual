@@ -30,6 +30,7 @@ const allApartments = [
   { id: "9", name: "Pousada Beach House Coqueirinho", location: "Jacumã", price: 100 },
   { id: "8", name: "Casa moderna Malvinas Campina Grande", location: "Campina Grande - Malvinas", price: 200 },
   { id: "7", name: "Get One - Bessa", location: "João Pessoa - Bessa", price: 100 },
+  { id: "10", name: "Unity #112 - Luxo em Cabo Branco por Carpediem", location: "João Pessoa - Tambaú", price: 180 },
   { id: "1", name: "Casa no Condomínio Águas da Serra - Locação por Temporada/Diária", location: "Bananeiras - Condomínio Águas da Serra Haras e Golfe", price: 320 },
   { id: "2", name: "Magnífica Casa de Alto Padrão - Águas da Serra", location: "Bananeiras - Condomínio Águas da Serra Haras e Golfe", price: 360 },
   { id: "3", name: "Casa de Alto Padrão - Águas da Serra Haras e Golfe", location: "Bananeiras - Condomínio Águas da Serra Haras e Golfe", price: 320 },

@@ -53,6 +53,23 @@ const allApartments: ApartmentProps[] = [
     ]
   },
   {
+    id: "10",
+    name: "Unity #112 - Luxo em Cabo Branco por Carpediem",
+    description: "Apartamento de luxo Unity #112 localizado em Cabo Branco, oferecendo uma experiência premium com vista para o mar. Unidade moderna e sofisticada, equipada com todas as comodidades necessárias para uma estadia confortável e elegante. Localização privilegiada próxima às principais atrações de João Pessoa.",
+    price: 180,
+    capacity: 4,
+    size: 65,
+    image: "/lovable-uploads/6a3b7fe2-1138-4672-986f-f76b0f1d4154.png",
+    images: [
+      "/lovable-uploads/e190a916-271a-4df1-8310-9cb3bd9d4514.png",
+      "/lovable-uploads/696c44e5-e246-46e2-9259-e832667a624e.png",
+      "/lovable-uploads/dbd72632-9c3f-492f-99cf-3f53871650b7.png",
+      "/lovable-uploads/23b845b0-2b4d-40d5-9afc-085b9175e943.png"
+    ],
+    location: "João Pessoa - Tambaú",
+    features: ["Vista para o Mar", "Apartamento de Luxo", "Localização Premium", "Moderno e Sofisticado", "Totalmente Equipado", "Próximo às Atrações", "Wi-Fi Grátis", "Ar Condicionado", "Carpediem"]
+  },
+  {
     id: "1",
     name: "Casa Luxo em Bananeiras no Condomínio Águas da Serra",
     description: "Casa de luxo para locação por temporada no prestigioso Condomínio Águas da Serra. Esta magnífica propriedade oferece o máximo em conforto e elegância, com ambientes sofisticados e acabamentos de alto padrão. Ideal para famílias e grupos que buscam uma experiência exclusiva em Bananeiras, com acesso a todas as comodidades do condomínio e proximidade com as principais atrações da região.",
