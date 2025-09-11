@@ -351,14 +351,20 @@ const Dashboard = () => {
                                   <label className="text-sm font-medium text-muted-foreground">Check-out</label>
                                   <p className="font-medium">{new Date(selectedReservation.checkOut).toLocaleDateString('pt-BR')}</p>
                                 </div>
-                                <div>
-                                  <label className="text-sm font-medium text-muted-foreground">Hóspedes</label>
-                                  <p className="font-medium">{selectedReservation.guests}</p>
-                                </div>
-                              </div>
-                            </div>
+                                 <div>
+                                   <label className="text-sm font-medium text-muted-foreground">Hóspedes</label>
+                                   <p className="font-medium">{selectedReservation.guests}</p>
+                                 </div>
+                                 <div>
+                                   <label className="text-sm font-medium text-muted-foreground">Valor Total das Diárias</label>
+                                   <p className="font-medium text-sea-dark text-lg">
+                                     R$ {selectedReservation.totalPrice || '0,00'}
+                                   </p>
+                                 </div>
+                               </div>
+                             </div>
 
-                            {/* Dados pessoais */}
+                             {/* Dados pessoais */}
                             <div className="space-y-4">
                               <h3 className="text-lg font-semibold border-b pb-2">Dados Pessoais</h3>
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
