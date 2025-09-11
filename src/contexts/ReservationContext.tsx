@@ -10,6 +10,7 @@ export interface Reservation {
   name: string;
   email: string;
   phone: string;
+  totalPrice: number;
   createdAt: string;
   // Informações de contrato
   cpf?: string;

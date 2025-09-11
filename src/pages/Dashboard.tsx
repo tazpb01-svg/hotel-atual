@@ -358,7 +358,7 @@ const Dashboard = () => {
                                  <div>
                                    <label className="text-sm font-medium text-muted-foreground">Valor Total das Diárias</label>
                                    <p className="font-medium text-sea-dark text-lg">
-                                     R$ {selectedReservation.totalPrice || '0,00'}
+                                     R$ {selectedReservation.totalPrice?.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                    </p>
                                  </div>
                                </div>

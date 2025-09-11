@@ -85,6 +85,7 @@ export default function BookingForm() {
       checkIn: startDate.toISOString(),
       checkOut: endDate.toISOString(),
       guests: parseInt(adults) + parseInt(children),
+      totalPrice: totalPrice,
       name,
       email,
       phone

@@ -103,6 +103,8 @@ export default function ContractForm() {
     }
     
     const nights = calculateNights();
+    const dailyRate = apartment.price;
+    const totalPrice = nights * dailyRate;
     
     // Salvar a reserva no contexto
     addReservation({
@@ -110,6 +112,7 @@ export default function ContractForm() {
       checkIn: startDate.toISOString(),
       checkOut: endDate.toISOString(),
       guests: 2, // Default para contrato
+      totalPrice: totalPrice,
       name: fullName,
       email: email,
       phone: whatsapp,
