@@ -136,6 +136,105 @@ const allApartments: ApartmentProps[] = [
     image: "/lovable-uploads/77040079-ddd7-4782-95e4-d6cc06b2fc19.png",
     location: "Bananeiras - Condomínio Águas da Serra Haras e Golfe",
     features: ["4 Suítes Climatizadas", "Piscina Aquecida", "Área Gourmet", "Sala de Jogos", "3 Vagas", "Cozinha Equipada", "Diarista Inclusa", "Aceita Pets", "WC Exclusivo Piscina", "Quarto de Serviço"]
+  },
+  {
+    id: "10",
+    name: "Apartamento Vista Mar - Tambaú",
+    description: "Apartamento moderno com vista panorâmica para o mar de Tambaú. Localizado em uma das avenidas mais movimentadas de João Pessoa, oferece fácil acesso a restaurantes, bares e comércio local. Unidade completamente equipada com 2 quartos climatizados, sala ampla com varanda e cozinha americana.",
+    price: 180,
+    capacity: 4,
+    size: 65,
+    image: "/lovable-uploads/6a3b7fe2-1138-4672-986f-f76b0f1d4154.png",
+    location: "João Pessoa - Tambaú",
+    features: ["Vista para o Mar", "2 Quartos Climatizados", "Varanda", "Cozinha Americana", "Wi-Fi Grátis", "Próximo a Restaurantes", "Estacionamento", "Sala Ampla", "Localização Central"]
+  },
+  {
+    id: "11",
+    name: "Casa de Praia - Praia do Amor",
+    description: "Casa rústica e aconchegante localizada na famosa Praia do Amor, em Pipa. Ideal para casais em lua de mel ou grupos pequenos que buscam tranquilidade e contato com a natureza. A casa possui decoração em estilo praiano com rede na varanda e vista para o mar.",
+    price: 220,
+    capacity: 3,
+    size: 40,
+    image: "/lovable-uploads/8984a635-d273-4ed8-9df6-2d52d994c652.png",
+    location: "Pipa - Praia do Amor",
+    features: ["Vista para o Mar", "Rede na Varanda", "Decoração Praiana", "Próximo à Praia", "Ambiente Rústico", "Ideal para Casais", "Tranquilidade", "Natureza Exuberante", "Pôr do Sol"]
+  },
+  {
+    id: "12",
+    name: "Flat Moderno - Manaíra",
+    description: "Flat contemporâneo no bairro nobre de Manaíra, próximo ao shopping e principais restaurantes da cidade. Unidade compacta mas muito bem aproveitada, com 1 suíte, sala integrada e cozinha equipada. Prédio com piscina, academia e área de lazer completa.",
+    price: 140,
+    capacity: 2,
+    size: 35,
+    image: "/lovable-uploads/ca58c4d1-672d-4213-9c60-9eb0a87aba48.png",
+    location: "João Pessoa - Manaíra",
+    features: ["1 Suíte", "Piscina do Prédio", "Academia", "Próximo ao Shopping", "Cozinha Equipada", "Área de Lazer", "Localização Nobre", "Wi-Fi Grátis", "Ar Condicionado"]
+  },
+  {
+    id: "13",
+    name: "Chalé Ecológico - Serra da Borborema",
+    description: "Chalé sustentável construído em madeira de reflorestamento, localizado na Serra da Borborema. Perfeito para quem busca contato com a natureza, ar puro e temperaturas amenas. O chalé possui lareira, varanda com rede e trilhas ecológicas no entorno.",
+    price: 160,
+    capacity: 6,
+    size: 80,
+    image: "/lovable-uploads/b7504d41-4ab1-44bf-b051-c89177ffcd86.png",
+    location: "Serra da Borborema - Bananeiras",
+    features: ["Lareira", "Varanda com Rede", "Trilhas Ecológicas", "Construção Sustentável", "Ar Puro", "Temperatura Amena", "Contato com Natureza", "Madeira de Reflorestamento", "Vista da Serra"]
+  },
+  {
+    id: "14",
+    name: "Studio Executivo - Cabo Branco",
+    description: "Studio moderno e funcional localizado no coração de Cabo Branco, a poucos metros da orla. Ideal para executivos em viagem de negócios ou turistas que preferem praticidade e localização privilegiada. Unidade completamente equipada com tudo que você precisa.",
+    price: 120,
+    capacity: 2,
+    size: 25,
+    image: "/lovable-uploads/d36fc446-7f39-48c7-b1a2-3e77fd484949.png",
+    location: "João Pessoa - Cabo Branco",
+    features: ["Studio Executivo", "Próximo à Orla", "Totalmente Equipado", "Wi-Fi de Alta Velocidade", "Ar Condicionado", "Cozinha Compacta", "Localização Central", "Ideal para Negócios", "Funcional"]
+  },
+  {
+    id: "15",
+    name: "Casa de Campo - Mataraca",
+    description: "Casa de campo espaçosa localizada em Mataraca, cercada por coqueirais e próxima às mais belas praias desertas da Paraíba. A casa possui piscina natural formada por um açude, área para churrasco e muito espaço para relaxar em meio à natureza.",
+    price: 280,
+    capacity: 10,
+    size: 150,
+    image: "/lovable-uploads/e2dfce77-8241-4fff-865d-0f2e3d672f11.png",
+    location: "Mataraca - Litoral Norte",
+    features: ["Piscina Natural", "Área para Churrasco", "Cercada por Coqueirais", "Praias Desertas", "Açude", "Espaço Amplo", "Natureza Preservada", "Tranquilidade Total", "Litoral Norte"]
+  },
+  {
+    id: "16",
+    name: "Pousada Familiar - Lucena",
+    description: "Acomodação familiar em pousada charmosa na cidade histórica de Lucena. Quartos confortáveis com ar condicionado, café da manhã regional incluso e fácil acesso às praias e ao centro histórico. Ideal para famílias que buscam hospitalidade paraibana autêntica.",
+    price: 110,
+    capacity: 5,
+    size: 50,
+    image: "/lovable-uploads/e594e0ae-4df9-43c4-964c-15f554079e90.png",
+    location: "Lucena - Centro Histórico",  
+    features: ["Café da Manhã Incluso", "Ar Condicionado", "Hospitalidade Autêntica", "Centro Histórico", "Próximo às Praias", "Acomodação Familiar", "Cultura Local", "Quartos Confortáveis", "Cidade Histórica"]
+  },
+  {
+    id: "17",
+    name: "Apartamento Cobertura - Brisamar",
+    description: "Cobertura duplex com terraço privativo no bairro de Brisamar. Vista panorâmica do oceano, 3 quartos sendo 1 suíte master, sala ampla com pé direito duplo e piscina privativa no terraço. Localização privilegiada próxima ao Shopping Tambiá.",
+    price: 350,
+    capacity: 8,
+    size: 120,
+    image: "/lovable-uploads/eb968d8f-7c4a-4cb9-9976-b591384924da.png",
+    location: "João Pessoa - Brisamar",
+    features: ["Cobertura Duplex", "Terraço Privativo", "Piscina Privativa", "Vista Panorâmica", "3 Quartos", "Suíte Master", "Pé Direito Duplo", "Próximo ao Shopping", "Localização Privilegiada"]
+  },
+  {
+    id: "18",
+    name: "Bangalô Rústico - Praia de Coqueirinho",
+    description: "Bangalô de madeira com design rústico-chique localizado na paradisíaca Praia de Coqueirinho. A propriedade oferece acesso direto à praia, deck privativo com rede e vista deslumbrante das falésias coloridas. Perfeito para uma escapada romântica.",
+    price: 250,
+    capacity: 2,
+    size: 30,
+    image: "/lovable-uploads/fa36259a-17fb-4ee1-816d-511e82c4f593.png",
+    location: "Coqueirinho - Conde",
+    features: ["Acesso Direto à Praia", "Deck Privativo", "Vista das Falésias", "Design Rústico-Chique", "Rede no Deck", "Romântico", "Praia Paradisíaca", "Bangalô de Madeira", "Exclusividade"]
   }
 ];
 
