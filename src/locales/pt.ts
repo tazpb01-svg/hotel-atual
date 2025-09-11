@@ -1,4 +1,4 @@
-export const en = {
+export const pt = {
   nav: {
     home: "Início",
     apartments: "Imóveis",

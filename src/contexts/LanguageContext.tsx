@@ -1,9 +1,9 @@
 
 import React, { createContext, useState, useEffect, useContext, ReactNode } from 'react';
-import { en } from '../locales/en';
+import { pt } from '../locales/pt';
 import { it } from '../locales/it';
 
-type Translations = typeof en;
+type Translations = typeof pt;
 
 interface LanguageContextType {
   language: string;
@@ -12,21 +12,26 @@ interface LanguageContextType {
 }
 
 const translations: Record<string, Translations> = {
-  en,
+  pt,
   it
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState('en');
-  const [t, setT] = useState<Translations>(translations.en);
+  const [language, setLanguage] = useState('pt');
+  const [t, setT] = useState<Translations>(translations.pt);
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language');
     if (savedLanguage && translations[savedLanguage]) {
       setLanguage(savedLanguage);
       setT(translations[savedLanguage]);
+    } else {
+      // Se não houver idioma salvo, usar português como padrão
+      setLanguage('pt');
+      setT(translations.pt);
+      localStorage.setItem('language', 'pt');
     }
   }, []);
 

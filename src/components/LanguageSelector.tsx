@@ -17,7 +17,7 @@ type Language = {
 };
 
 const languages: Language[] = [
-  { code: "en", name: "English", flag: "🇬🇧" },
+  { code: "pt", name: "Português", flag: "🇧🇷" },
   { code: "it", name: "Italiano", flag: "🇮🇹" },
 ];
 
