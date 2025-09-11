@@ -76,7 +76,17 @@ const Dashboard = () => {
   const formatExpiryDate = (value: string) => {
     const v = value.replace(/\D/g, '');
     if (v.length >= 2) {
-      return v.substring(0, 2) + '/' + v.substring(2, 4);
+      let month = v.substring(0, 2);
+      let year = v.substring(2, 4);
+      
+      // Validar o mês (01-12)
+      if (parseInt(month) > 12) {
+        month = '12';
+      } else if (parseInt(month) === 0 && month.length === 2) {
+        month = '01';
+      }
+      
+      return month + (year ? '/' + year : '');
     }
     return v;
   };
