@@ -279,11 +279,11 @@ export const pt = {
       description: "Elegant studio with direct beach access, modern design, and premium finishes."
     },
     "4": {
-      name: "Luxury Penthouse Suite",
+  name: "Luxor Paulo Miranda Home Service - Cabo Branco",
       description: "Exclusive top-floor suite with expansive terrace and panoramic sea views."
     },
     "5": {
-      name: "Classic Double Room",
+  name: "Edifício Camaratuba - Intermares Frente à Praia",
       description: "Comfortable hotel room with modern amenities and partial sea views."
     },
     "6": {

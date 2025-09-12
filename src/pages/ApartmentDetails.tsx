@@ -54,8 +54,8 @@ const allApartments: ApartmentProps[] = [
   },
   {
     id: "10",
-    name: "Unity #112 - Luxo em Cabo Branco por Carpediem",
-    description: "Apartamento de luxo Unity #112 localizado em Cabo Branco, oferecendo uma experiência premium com vista para o mar. Unidade moderna e sofisticada, equipada com todas as comodidades necessárias para uma estadia confortável e elegante. Localização privilegiada próxima às principais atrações de João Pessoa.",
+  name: "Unity Luxo em Cabo Branco",
+  description: "Apartamento de luxo Unity localizado em Cabo Branco, oferecendo uma experiência premium com vista para o mar. Unidade moderna e sofisticada, equipada com todas as comodidades necessárias para uma estadia confortável e elegante. Localização privilegiada próxima às principais atrações de João Pessoa.",
     price: 180,
     capacity: 4,
     size: 65,
