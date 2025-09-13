@@ -13,6 +13,59 @@ import { ApartmentProps } from "@/components/ApartmentCard";
 // Todos os imóveis disponíveis
 const allApartments: ApartmentProps[] = [
   {
+    id: "12",
+    name: "Apartamento Cabo Branco Beira-Mar",
+  description: "Com varanda e vista privilegiada para a cidade, o flat conta com 1 quarto climatizado, sala de estar aconchegante com TV de tela plana a cabo, cozinha equipada e banheiro moderno com chuveiro. O flat oferece toalhas e roupa de cama.\nO Flat Moderno – Manaíra está localizado a poucos metros da orla de Manaíra e próximo a restaurantes e shoppings. O Aeroporto Internacional Presidente Castro Pinto fica a 22 km de distância.",
+    price: 140,
+      capacity: 7,
+      size: 58,
+  image: "/lovable-uploads/21387449.jpg",
+      location: "João Pessoa - Cabo Branco",
+    features: ["1 Suíte", "Piscina do Prédio", "Academia", "Próximo ao Shopping", "Cozinha Equipada", "Área de Lazer", "Localização Nobre", "Wi-Fi Grátis", "Ar Condicionado"],
+    images: [
+      "/lovable-uploads/21387460.jpg",
+      "/lovable-uploads/21387463.jpg",
+      "/lovable-uploads/22215735.jpg",
+      "/lovable-uploads/22215758.jpg",
+      "/lovable-uploads/138486371.jpg",
+      "/lovable-uploads/138486748.jpg",
+      "/lovable-uploads/140419278.jpg",
+      "/lovable-uploads/165527845.jpg",
+      "/lovable-uploads/165528122.jpg"
+    ],
+  },
+  {
+    id: "13",
+      name: "Blue Sunset Beira Mar",
+      description: "Cada detalhe do Blue Sunset Beira Mar foi pensado para proporcionar uma estadia única e confortável. A unidade conta com varanda com vista para o mar, TV de tela plana a cabo, área de estar, cozinha compacta bem equipada, além de um banheiro privativo com chuveiro, produtos de banho de cortesia e secador de cabelo.",
+      price: 160,
+      capacity: 6,
+      size: 56,
+      image: "/lovable-uploads/722876543.jpg",
+      location: "João Pessoa - Cabo Branco",
+      features: [
+        "Varanda com Vista para o Mar",
+        "Contato com a Natureza",
+        "Cozinha Compacta Equipada",
+        "Ar Puro e Brisa do Mar",
+        "Temperatura Agradável",
+        "Banheiro Privativo",
+        "Área de Estar Confortável",
+        "Construção Sustentável",
+        "Produtos de Banho de Cortesia"
+      ],
+      images: [
+        "/lovable-uploads/568527638.jpg",
+        "/lovable-uploads/568590780.jpg",
+        "/lovable-uploads/568590984.jpg",
+        "/lovable-uploads/568591097.jpg",
+        "/lovable-uploads/568591261.jpg",
+        "/lovable-uploads/568591418.jpg",
+        "/lovable-uploads/568591866.jpg",
+        "/lovable-uploads/568591885.jpg"
+      ],
+  },
+  {
     id: "9",
     name: "Pousada Beach House Coqueirinho",
     description: "Pousada Beach House Coqueirinho fornece acomodação com jardim, estacionamento privativo, terraço e restaurante em Jacumã. Praia Encantada fica a poucos passos de distância. Com bar, a acomodação está localizada a cerca de 29 km de Cabo Branco Lighthouse. A pousada conta com piscina ao ar livre e um balcão de turismo e Wi-Fi grátis em toda a propriedade. Em Pousada Beach House Coqueirinho, você pode tomar um café da manhã em estilo buffet. Pousada Beach House Coqueirinho fica a 36 km de Rodoviária de João Pessoa e a 36 km de Estação de Trem. O Aeroporto Internacional Presidente Castro Pinto - João Pessoa fica a 40 km de distância, e a acomodação oferece um serviço de transfer (aeroporto) a um custo adicional.",
@@ -58,15 +111,20 @@ const allApartments: ApartmentProps[] = [
   description: "Apartamento de luxo Unity localizado em Cabo Branco, oferecendo uma experiência premium com vista para o mar. Unidade moderna e sofisticada, equipada com todas as comodidades necessárias para uma estadia confortável e elegante. Localização privilegiada próxima às principais atrações de João Pessoa.",
     price: 180,
     capacity: 4,
-    size: 65,
-    image: "/lovable-uploads/6a3b7fe2-1138-4672-986f-f76b0f1d4154.png",
+  size: 35,
+  image: "/lovable-uploads/477467618.jpg",
     images: [
-      "/lovable-uploads/e190a916-271a-4df1-8310-9cb3bd9d4514.png",
-      "/lovable-uploads/696c44e5-e246-46e2-9259-e832667a624e.png",
-      "/lovable-uploads/dbd72632-9c3f-492f-99cf-3f53871650b7.png",
-      "/lovable-uploads/23b845b0-2b4d-40d5-9afc-085b9175e943.png"
+      "/lovable-uploads/477467620.jpg",
+      "/lovable-uploads/477467655.jpg",
+      "/lovable-uploads/477467780.jpg",
+      "/lovable-uploads/477467799.jpg",
+      "/lovable-uploads/477467637.jpg",
+      "/lovable-uploads/477467678.jpg",
+      "/lovable-uploads/477467741.jpg",
+      "/lovable-uploads/477467751.jpg",
+      "/lovable-uploads/477467755.jpg"
     ],
-    location: "João Pessoa - Tambaú",
+    location: "João Pessoa - Cabo Branco",
     features: ["Vista para o Mar", "Apartamento de Luxo", "Localização Premium", "Moderno e Sofisticado", "Totalmente Equipado", "Próximo às Atrações", "Wi-Fi Grátis", "Ar Condicionado", "Carpediem"]
   },
   {

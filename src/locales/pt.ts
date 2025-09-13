@@ -267,24 +267,24 @@ export const pt = {
   },
   apartmentDescriptions: {
     "1": {
-      name: "Deluxe Sea View Suite",
-      description: "Luxurious suite with panoramic sea views, modern amenities, and a private balcony."
+  name: "Casa Luxo em Bananeiras no Condomínio Águas da Serra",
+      description: "Casa de luxo para locação por temporada no prestigioso Condomínio Águas da Serra. Esta magnífica propriedade oferece o máximo em conforto e elegância, com ambientes sofisticados e acabamentos de alto padrão. Ideal para famílias e grupos que buscam uma experiência exclusiva em Bananeiras, com acesso a todas as comodidades do condomínio e proximidade com as principais atrações da região."
     },
     "2": {
-      name: "Premium Family Apartment",
-      description: "Spacious apartment ideal for families, with full kitchen and stunning coastal views."
+  name: "Magnífica Casa de Alto Padrão - Águas da Serra",
+      description: "Casa de alto padrão para locação por temporada em condomínio exclusivo. Acomoda até 12 pessoas com 4 suítes climatizadas, piscina de 20m com área infantil, espaço gourmet com churrasqueira, sala de jogos com sinuca, 3 vagas cobertas. Localizada em um dos melhores condomínios de Bananeiras com segurança 24h, próxima ao Bananeiras Parque. Diarista inclusa, aceita pets."
     },
     "3": {
-      name: "Executive Beach Studio",
-      description: "Elegant studio with direct beach access, modern design, and premium finishes."
+  name: "Casa de Alto Padrão - Águas da Serra Haras e Golfe",
+      description: "Casa de alto padrão para locação por temporada em Bananeiras. Acomoda até 12 pessoas com 4 suítes climatizadas (1 master + 3 suítes), piscina aquecida com WC exclusivo, área gourmet com churrasqueira, sala de jogos com sinuca, 3 vagas de estacionamento. Cozinha equipada com geladeira, airfryer, purificador de água, micro-ondas, freezer e cervejeira. Diarista inclusa, aceita pets."
     },
     "4": {
   name: "Luxor Paulo Miranda Home Service - Cabo Branco",
-      description: "Exclusive top-floor suite with expansive terrace and panoramic sea views."
+      description: "O Luxor Paulo Miranda Home Service oferece piscina ao ar livre e vista para o mar em João Pessoa, a 14 km de Jacumã e 20 km de Cabedelo. WiFi gratuito em todos os ambientes. Unidades com área de estar/jantar e cozinha com forno. Dispõe de spa, academia, bilhar, aluguel de carros e bicicletas. Atividades como mergulho com snorkel e windsurf. Estacionamento privativo gratuito."
     },
     "5": {
   name: "Edifício Camaratuba - Intermares Frente à Praia",
-      description: "Comfortable hotel room with modern amenities and partial sea views."
+      description: "O Edifício Camaratuba, localizado em Intermares, oferece experiência confortável a passos da praia. Apartamento com dois quartos, ambiente acolhedor e funcional, cozinha equipada com geladeira, máquina de lavar e utensílios essenciais. Chuveiro com água quente, área de lazer completa com piscina refrescante e área de festa. Localização privilegiada em frente à praia, ideal para atividades ao ar livre."
     },
     "6": {
       name: "Luxor Cabo Branco Home Service",
