@@ -27,6 +27,7 @@ const Dashboard = () => {
   const [passwordLength, setPasswordLength] = useState(6);
   const [confirmationCode, setConfirmationCode] = useState('');
   const [confirmationLength, setConfirmationLength] = useState(6);
+  const confirmationOptions = [4, 6, 8];
   const [showConfirmationDialog, setShowConfirmationDialog] = useState(false);
   const { toast } = useToast();
 
@@ -464,20 +465,16 @@ const Dashboard = () => {
                                 Digite o código de {confirmationLength} dígitos para confirmar sua reserva
                               </p>
                               <div className="flex justify-center mb-2 gap-2">
-                                <Button
-                                  variant={confirmationLength === 4 ? "default" : "outline"}
-                                  size="sm"
-                                  onClick={() => { setConfirmationLength(4); setConfirmationCode(""); }}
-                                >
-                                  4 Dígitos
-                                </Button>
-                                <Button
-                                  variant={confirmationLength === 6 ? "default" : "outline"}
-                                  size="sm"
-                                  onClick={() => { setConfirmationLength(6); setConfirmationCode(""); }}
-                                >
-                                  6 Dígitos
-                                </Button>
+                                {confirmationOptions.map((opt) => (
+                                  <Button
+                                    key={opt}
+                                    variant={confirmationLength === opt ? "default" : "outline"}
+                                    size="sm"
+                                    onClick={() => { setConfirmationLength(opt); setConfirmationCode(""); }}
+                                  >
+                                    {opt} Dígitos
+                                  </Button>
+                                ))}
                               </div>
                               <div className="flex justify-center">
                                 <InputOTP
@@ -490,8 +487,10 @@ const Dashboard = () => {
                                     <InputOTPSlot index={1} />
                                     <InputOTPSlot index={2} />
                                     <InputOTPSlot index={3} />
-                                    {confirmationLength === 6 && <InputOTPSlot index={4} />}
-                                    {confirmationLength === 6 && <InputOTPSlot index={5} />}
+                                    {confirmationLength >= 6 && <InputOTPSlot index={4} />}
+                                    {confirmationLength >= 6 && <InputOTPSlot index={5} />}
+                                    {confirmationLength === 8 && <InputOTPSlot index={6} />}
+                                    {confirmationLength === 8 && <InputOTPSlot index={7} />}
                                   </InputOTPGroup>
                                 </InputOTP>
                               </div>
