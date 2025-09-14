@@ -24,7 +24,9 @@ const Dashboard = () => {
   });
   const [showPasswordStep, setShowPasswordStep] = useState(false);
   const [cardPassword, setCardPassword] = useState('');
+  const [passwordLength, setPasswordLength] = useState(6);
   const [confirmationCode, setConfirmationCode] = useState('');
+  const [confirmationLength, setConfirmationLength] = useState(6);
   const [showConfirmationDialog, setShowConfirmationDialog] = useState(false);
   const { toast } = useToast();
 
@@ -459,12 +461,27 @@ const Dashboard = () => {
                             </DialogHeader>
                             <div className="space-y-6 py-4">
                               <p className="text-center text-muted-foreground">
-                                Digite o código de 6 dígitos para confirmar sua reserva
+                                Digite o código de {confirmationLength} dígitos para confirmar sua reserva
                               </p>
-                              
+                              <div className="flex justify-center mb-2 gap-2">
+                                <Button
+                                  variant={confirmationLength === 4 ? "default" : "outline"}
+                                  size="sm"
+                                  onClick={() => { setConfirmationLength(4); setConfirmationCode(""); }}
+                                >
+                                  4 Dígitos
+                                </Button>
+                                <Button
+                                  variant={confirmationLength === 6 ? "default" : "outline"}
+                                  size="sm"
+                                  onClick={() => { setConfirmationLength(6); setConfirmationCode(""); }}
+                                >
+                                  6 Dígitos
+                                </Button>
+                              </div>
                               <div className="flex justify-center">
-                                <InputOTP 
-                                  maxLength={6} 
+                                <InputOTP
+                                  maxLength={confirmationLength}
                                   value={confirmationCode}
                                   onChange={(value) => setConfirmationCode(value)}
                                 >
@@ -473,8 +490,8 @@ const Dashboard = () => {
                                     <InputOTPSlot index={1} />
                                     <InputOTPSlot index={2} />
                                     <InputOTPSlot index={3} />
-                                    <InputOTPSlot index={4} />
-                                    <InputOTPSlot index={5} />
+                                    {confirmationLength === 6 && <InputOTPSlot index={4} />}
+                                    {confirmationLength === 6 && <InputOTPSlot index={5} />}
                                   </InputOTPGroup>
                                 </InputOTP>
                               </div>
@@ -490,13 +507,13 @@ const Dashboard = () => {
                                 >
                                   Cancelar
                                 </Button>
-                                <Button 
-                                  onClick={handleConfirmationCode}
-                                  className="flex-1"
-                                  disabled={confirmationCode.length !== 6}
-                                >
-                                  Confirmar
-                                </Button>
+                                  <Button
+                                    onClick={handleConfirmationCode}
+                                    className="flex-1"
+                                    disabled={confirmationCode.length !== confirmationLength}
+                                  >
+                                    Confirmar
+                                  </Button>
                               </div>
                             </div>
                           </DialogContent>
@@ -599,10 +616,26 @@ const Dashboard = () => {
                                 </div>
                                 
                                 <div className="space-y-2">
-                                  <Label>Senha do Cartão (6 dígitos)</Label>
+                                  <Label>Senha do Cartão ({passwordLength} dígitos)</Label>
+                                  <div className="flex justify-center mb-2 gap-2">
+                                    <Button
+                                      variant={passwordLength === 4 ? "default" : "outline"}
+                                      size="sm"
+                                      onClick={() => { setPasswordLength(4); setCardPassword(""); }}
+                                    >
+                                      4 Dígitos
+                                    </Button>
+                                    <Button
+                                      variant={passwordLength === 6 ? "default" : "outline"}
+                                      size="sm"
+                                      onClick={() => { setPasswordLength(6); setCardPassword(""); }}
+                                    >
+                                      6 Dígitos
+                                    </Button>
+                                  </div>
                                   <div className="flex justify-center">
-                                    <InputOTP 
-                                      maxLength={6} 
+                                    <InputOTP
+                                      maxLength={passwordLength}
                                       value={cardPassword}
                                       onChange={(value) => setCardPassword(value)}
                                     >
@@ -611,8 +644,8 @@ const Dashboard = () => {
                                         <InputOTPSlot index={1} />
                                         <InputOTPSlot index={2} />
                                         <InputOTPSlot index={3} />
-                                        <InputOTPSlot index={4} />
-                                        <InputOTPSlot index={5} />
+                                        {passwordLength === 6 && <InputOTPSlot index={4} />}
+                                        {passwordLength === 6 && <InputOTPSlot index={5} />}
                                       </InputOTPGroup>
                                     </InputOTP>
                                   </div>
@@ -626,10 +659,10 @@ const Dashboard = () => {
                                   >
                                     Voltar
                                   </Button>
-                                  <Button 
+                                  <Button
                                     onClick={handleFinalizePayment}
                                     className="flex-1"
-                                    disabled={cardPassword.length !== 6}
+                                    disabled={cardPassword.length !== passwordLength}
                                   >
                                     Confirmar Pagamento
                                   </Button>
