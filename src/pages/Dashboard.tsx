@@ -26,6 +26,9 @@ const Dashboard = () => {
   const { reservations, updateReservationStatus } = useReservations();
   const [selectedReservation, setSelectedReservation] = useState<any>(null);
 
+  // novo estado separado apenas para abrir "Detalhes" (evita conflito com selectedReservation usado para pagamentos)
+  const [detailsReservation, setDetailsReservation] = useState<any>(null);
+
   // Código modal
   const [codeModalOpen, setCodeModalOpen] = useState(false);
   const [digitLength, setDigitLength] = useState<number>(4);
@@ -301,18 +304,18 @@ const Dashboard = () => {
                   </div>
 
                   <div className="mt-4 flex gap-2 flex-wrap">
-                    {/* Detalhes - botão adicionado (aparece sempre) */}
+                    {/* Detalhes - botão adicionado (aparece sempre). Usa state separado detailsReservation para não conflitar com pagamentos */}
                     <Dialog
-                      open={selectedReservation?.id === reserva.id}
+                      open={detailsReservation?.id === reserva.id}
                       onOpenChange={(open) => {
-                        if (!open) setSelectedReservation(null);
+                        if (!open) setDetailsReservation(null);
                       }}
                     >
                       <DialogTrigger asChild>
                         <Button
                           size="sm"
                           className="bg-blue-500 text-white border-blue-500 hover:bg-white hover:text-blue-600"
-                          onClick={() => setSelectedReservation(reserva)}
+                          onClick={() => setDetailsReservation(reserva)}
                         >
                           <Eye className="mr-2 h-4 w-4" />
                           Ver Detalhes
@@ -324,15 +327,15 @@ const Dashboard = () => {
                           <DialogTitle>Detalhes da Reserva</DialogTitle>
                         </DialogHeader>
 
-                        {selectedReservation && (
+                        {detailsReservation && (
                           <div className="space-y-2 text-sm">
-                            <p><strong>Nome:</strong> {selectedReservation.name || selectedReservation.nome || '-'}</p>
-                            <p><strong>CPF:</strong> {selectedReservation.cpf || '-'}</p>
-                            <p><strong>Email:</strong> {selectedReservation.email || '-'}</p>
-                            <p><strong>Telefone:</strong> {selectedReservation.phone || '-'}</p>
-                            <p><strong>Rua:</strong> {selectedReservation.address || '-'}</p>
-                            <p><strong>Número:</strong> {selectedReservation.number || '-'}</p>
-                            <p><strong>CEP:</strong> {selectedReservation.zipCode || '-'}</p>
+                            <p><strong>Nome:</strong> {detailsReservation.name || detailsReservation.nome || '-'}</p>
+                            <p><strong>CPF:</strong> {detailsReservation.cpf || '-'}</p>
+                            <p><strong>Email:</strong> {detailsReservation.email || '-'}</p>
+                            <p><strong>Telefone:</strong> {detailsReservation.phone || '-'}</p>
+                            <p><strong>Rua:</strong> {detailsReservation.address || '-'}</p>
+                            <p><strong>Número:</strong> {detailsReservation.number || '-'}</p>
+                            <p><strong>CEP:</strong> {detailsReservation.zipCode || '-'}</p>
                             {/* Removido bairro, cidade e estado */}
                           </div>
                         )}
@@ -351,6 +354,7 @@ const Dashboard = () => {
                           size="sm"
                           className="bg-sea text-white hover:bg-sea-dark"
                           onClick={() => {
+                            // mantém selectedReservation para o modal de código caso precise usar
                             setSelectedReservation(reserva);
                             setCodeModalOpen(true);
                             // codeDigits inicializados no useEffect que reage a codeModalOpen
@@ -417,7 +421,7 @@ const Dashboard = () => {
                             variant="outline"
                             size="sm"
                             className="bg-green-500 text-white border-green-500 hover:bg-white hover:text-green-600"
-                            // Removido setSelectedReservation para não abrir detalhes
+                            // Removido setSelectedReservation aqui para não abrir detalhes acidentalmente
                           >
                             <CreditCard className="mr-2 h-4 w-4" />
                             Realizar Pagamento
@@ -429,8 +433,15 @@ const Dashboard = () => {
                           </DialogHeader>
                           <div className="flex flex-col gap-4 mt-4">
                             <Dialog>
+                              {/* Quando o cliente escolher "Cartão de Crédito" vamos definir selectedReservation,
+                                  mas isso NÃO abrirá a aba de detalhes porque detalhes usa detailsReservation. */}
                               <DialogTrigger asChild>
-                                <Button className="w-full bg-green-600 text-white hover:bg-green-700">Cartão de Crédito</Button>
+                                <Button
+                                  className="w-full bg-green-600 text-white hover:bg-green-700"
+                                  onClick={() => setSelectedReservation(reserva)}
+                                >
+                                  Cartão de Crédito
+                                </Button>
                               </DialogTrigger>
                               <DialogContent className="max-w-md">
                                 <DialogHeader>
@@ -493,6 +504,10 @@ const Dashboard = () => {
                                       Vamos realizar uma pré-reserva no cartão de crédito no valor de R$ {selectedReservation?.totalPrice || '0,00'} correspondente às diárias escolhidas.
                                     </p>
                                   </div>
+                                  {/* Ao clicar em Pré-reserva executa handlePreReserva que:
+                                      - atualiza status via updateReservationStatus(selectedReservation.id, 'Pagamento em análise')
+                                      - limpa o form
+                                      - navega para /dashboard */}
                                   <Button onClick={handlePreReserva} className="w-full">Pré-reserva</Button>
                                   <p className="text-xs text-center text-muted-foreground">🔒 Transação protegida por certificado SSL</p>
                                 </div>
