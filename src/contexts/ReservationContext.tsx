@@ -12,7 +12,7 @@ export interface Reservation {
   phone: string;
   totalPrice: number;
   createdAt: string;
-  // Informações de contrato
+  // Informações de reserva
   cpf?: string;
   address?: string;
   number?: string;

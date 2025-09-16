@@ -13,7 +13,8 @@ import {
   Mail,
   Users,
   CreditCard,
-  Shield
+  Shield,
+  Eye
 } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
@@ -300,6 +301,44 @@ const Dashboard = () => {
                   </div>
 
                   <div className="mt-4 flex gap-2 flex-wrap">
+                    {/* Detalhes - botão adicionado (aparece sempre) */}
+                    <Dialog
+                      open={selectedReservation?.id === reserva.id}
+                      onOpenChange={(open) => {
+                        if (!open) setSelectedReservation(null);
+                      }}
+                    >
+                      <DialogTrigger asChild>
+                        <Button
+                          size="sm"
+                          className="bg-blue-500 text-white border-blue-500 hover:bg-white hover:text-blue-600"
+                          onClick={() => setSelectedReservation(reserva)}
+                        >
+                          <Eye className="mr-2 h-4 w-4" />
+                          Ver Detalhes
+                        </Button>
+                      </DialogTrigger>
+
+                      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle>Detalhes da Reserva</DialogTitle>
+                        </DialogHeader>
+
+                        {selectedReservation && (
+                          <div className="space-y-2 text-sm">
+                            <p><strong>Nome:</strong> {selectedReservation.name || selectedReservation.nome || '-'}</p>
+                            <p><strong>CPF:</strong> {selectedReservation.cpf || '-'}</p>
+                            <p><strong>Email:</strong> {selectedReservation.email || '-'}</p>
+                            <p><strong>Telefone:</strong> {selectedReservation.phone || '-'}</p>
+                            <p><strong>Rua:</strong> {selectedReservation.address || '-'}</p>
+                            <p><strong>Número:</strong> {selectedReservation.number || '-'}</p>
+                            <p><strong>CEP:</strong> {selectedReservation.zipCode || '-'}</p>
+                            {/* Removido bairro, cidade e estado */}
+                          </div>
+                        )}
+                      </DialogContent>
+                    </Dialog>
+
                     {/* Se estiver em Pagamento em análise: botão amarelo + Código */}
                     {reserva.status === 'Pagamento em análise' && (
                       <>

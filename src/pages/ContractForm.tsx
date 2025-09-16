@@ -114,7 +114,7 @@ export default function ContractForm() {
       apartment: apartment.name,
       checkIn: startDate.toISOString(),
       checkOut: endDate.toISOString(),
-      guests: 2, // Default para contrato
+      guests: 2, // Default para reserva
       totalPrice: totalPrice,
       name: fullName,
       email: email,
@@ -127,8 +127,8 @@ export default function ContractForm() {
     });
     
     toast({
-      title: "Contrato salvo!",
-      description: "Sua solicitação de contrato foi salva em suas reservas.",
+      title: "Reserva salva!",
+      description: "Sua solicitação de reserva foi salva em suas reservas.",
     });
     
     setSubmitted(true);
@@ -178,7 +178,7 @@ export default function ContractForm() {
 
             <div className="glass-card p-8 space-y-6 animate-fade-in">
               <div className="text-center mb-8">
-                <h1 className="text-3xl font-bold mb-2">Solicitação de Contrato</h1>
+                <h1 className="text-3xl font-bold mb-2">Solicitação de Reserva</h1>
                 <p className="text-muted-foreground">{apartment.name}</p>
                 <p className="text-sm text-muted-foreground">{apartment.location} - R$ {apartment.price}/noite</p>
               </div>
@@ -387,13 +387,13 @@ export default function ContractForm() {
                     </>
                   ) : (
                     <>
-                      Enviar Solicitação de Contrato
+                      Enviar Solicitação de Reserva
                     </>
                   )}
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center">
-                  * Campos obrigatórios. Suas informações serão salvas em minhas reservas para elaboração do contrato.
+                  * Campos obrigatórios. Suas informações serão salvas em minhas reservas para elaboração da reserva.
                 </p>
                 
                 {submitted && (
