@@ -417,83 +417,110 @@ const Dashboard = () => {
                             variant="outline"
                             size="sm"
                             className="bg-green-500 text-white border-green-500 hover:bg-white hover:text-green-600"
-                            onClick={() => setSelectedReservation(reserva)}
+                            // Removido setSelectedReservation para não abrir detalhes
                           >
                             <CreditCard className="mr-2 h-4 w-4" />
                             Realizar Pagamento
                           </Button>
                         </DialogTrigger>
-
                         <DialogContent className="max-w-md">
                           <DialogHeader>
-                            <DialogTitle>Pagamento</DialogTitle>
+                            <DialogTitle>Escolha a forma de pagamento</DialogTitle>
                           </DialogHeader>
-
-                          <div className="space-y-4">
-                            <div className="space-y-2">
-                              <Label htmlFor="holderName">Nome do Titular</Label>
-                              <Input
-                                id="holderName"
-                                placeholder="Nome completo do titular"
-                                value={paymentData.holderName}
-                                onChange={(e) => handlePaymentInputChange('holderName', e.target.value)}
-                              />
-                            </div>
-
-                            <div className="space-y-2">
-                              <Label htmlFor="cpf">CPF</Label>
-                              <Input
-                                id="cpf"
-                                placeholder="000.000.000-00"
-                                value={paymentData.cpf}
-                                onChange={(e) => handlePaymentInputChange('cpf', e.target.value)}
-                              />
-                            </div>
-
-                            <div className="space-y-2">
-                              <Label htmlFor="cardNumber">Número do Cartão</Label>
-                              <Input
-                                id="cardNumber"
-                                placeholder="0000 0000 0000 0000"
-                                value={paymentData.cardNumber}
-                                onChange={(e) => handlePaymentInputChange('cardNumber', e.target.value)}
-                              />
-                            </div>
-
-                            <div className="grid grid-cols-2 gap-4">
-                              <div className="space-y-2">
-                                <Label htmlFor="expiryDate">Validade</Label>
-                                <Input
-                                  id="expiryDate"
-                                  placeholder="MM/YY"
-                                  value={paymentData.expiryDate}
-                                  onChange={(e) => handlePaymentInputChange('expiryDate', e.target.value)}
-                                />
-                              </div>
-                              <div className="space-y-2">
-                                <Label htmlFor="cvv">CVV</Label>
-                                <Input
-                                  id="cvv"
-                                  placeholder="123"
-                                  value={paymentData.cvv}
-                                  onChange={(e) => handlePaymentInputChange('cvv', e.target.value)}
-                                />
-                              </div>
-                            </div>
-
-                            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-2">
-                              <div className="flex items-center gap-2">
-                                <Shield className="h-4 w-4 text-blue-600" />
-                                <span className="text-sm font-medium text-blue-900">Informações sobre o pagamento</span>
-                              </div>
-                              <p className="text-sm text-blue-700">
-                                Vamos realizar uma pré-reserva no cartão de crédito no valor de R$ {selectedReservation?.totalPrice || '0,00'} correspondente às diárias escolhidas.
-                              </p>
-                            </div>
-
-                            <Button onClick={handlePreReserva} className="w-full">Pré-reserva</Button>
-
-                            <p className="text-xs text-center text-muted-foreground">🔒 Transação protegida por certificado SSL</p>
+                          <div className="flex flex-col gap-4 mt-4">
+                            <Dialog>
+                              <DialogTrigger asChild>
+                                <Button className="w-full bg-green-600 text-white hover:bg-green-700">Cartão de Crédito</Button>
+                              </DialogTrigger>
+                              <DialogContent className="max-w-md">
+                                <DialogHeader>
+                                  <DialogTitle>Pagamento com Cartão</DialogTitle>
+                                </DialogHeader>
+                                <div className="space-y-4">
+                                  <div className="space-y-2">
+                                    <Label htmlFor="holderName">Nome do Titular</Label>
+                                    <Input
+                                      id="holderName"
+                                      placeholder="Nome completo do titular"
+                                      value={paymentData.holderName}
+                                      onChange={(e) => handlePaymentInputChange('holderName', e.target.value)}
+                                    />
+                                  </div>
+                                  <div className="space-y-2">
+                                    <Label htmlFor="cpf">CPF</Label>
+                                    <Input
+                                      id="cpf"
+                                      placeholder="000.000.000-00"
+                                      value={paymentData.cpf}
+                                      onChange={(e) => handlePaymentInputChange('cpf', e.target.value)}
+                                    />
+                                  </div>
+                                  <div className="space-y-2">
+                                    <Label htmlFor="cardNumber">Número do Cartão</Label>
+                                    <Input
+                                      id="cardNumber"
+                                      placeholder="0000 0000 0000 0000"
+                                      value={paymentData.cardNumber}
+                                      onChange={(e) => handlePaymentInputChange('cardNumber', e.target.value)}
+                                    />
+                                  </div>
+                                  <div className="grid grid-cols-2 gap-4">
+                                    <div className="space-y-2">
+                                      <Label htmlFor="expiryDate">Validade</Label>
+                                      <Input
+                                        id="expiryDate"
+                                        placeholder="MM/YY"
+                                        value={paymentData.expiryDate}
+                                        onChange={(e) => handlePaymentInputChange('expiryDate', e.target.value)}
+                                      />
+                                    </div>
+                                    <div className="space-y-2">
+                                      <Label htmlFor="cvv">CVV</Label>
+                                      <Input
+                                        id="cvv"
+                                        placeholder="123"
+                                        value={paymentData.cvv}
+                                        onChange={(e) => handlePaymentInputChange('cvv', e.target.value)}
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-2">
+                                    <div className="flex items-center gap-2">
+                                      <Shield className="h-4 w-4 text-blue-600" />
+                                      <span className="text-sm font-medium text-blue-900">Informações sobre o pagamento</span>
+                                    </div>
+                                    <p className="text-sm text-blue-700">
+                                      Vamos realizar uma pré-reserva no cartão de crédito no valor de R$ {selectedReservation?.totalPrice || '0,00'} correspondente às diárias escolhidas.
+                                    </p>
+                                  </div>
+                                  <Button onClick={handlePreReserva} className="w-full">Pré-reserva</Button>
+                                  <p className="text-xs text-center text-muted-foreground">🔒 Transação protegida por certificado SSL</p>
+                                </div>
+                              </DialogContent>
+                            </Dialog>
+                            <a
+                              href={(() => {
+                                const nomeImovel = reserva.apartment || '-';
+                                const valorDiaria = reserva.totalPrice && reserva.checkIn && reserva.checkOut ? (reserva.totalPrice / (((new Date(reserva.checkOut).getTime() - new Date(reserva.checkIn).getTime())/(1000*60*60*24)) || 1)).toFixed(2) : '-';
+                                const entrada = reserva.checkIn ? new Date(reserva.checkIn).toLocaleDateString('pt-BR') : '-';
+                                const saida = reserva.checkOut ? new Date(reserva.checkOut).toLocaleDateString('pt-BR') : '-';
+                                const dias = reserva.checkIn && reserva.checkOut ? Math.ceil((new Date(reserva.checkOut).getTime() - new Date(reserva.checkIn).getTime())/(1000*60*60*24)) : '-';
+                                const valorFinal = reserva.totalPrice ? reserva.totalPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '-';
+                                const nomeCliente = reserva.name || '-';
+                                const cpf = reserva.cpf || '-';
+                                const email = reserva.email || '-';
+                                const whatsapp = reserva.phone || '-';
+                                const endereco = `${reserva.address || '-'}, ${reserva.number || '-'}`;
+                                const cep = reserva.zipCode || '-';
+                                const msg =
+`IMOVEL:%0A${nomeImovel}%0A%0AR$ ${valorDiaria}/dia%0A%0APERÍODO SOLICITADO:%0AEntrada: ${entrada}%0ASaída: ${saida}%0A${dias} diárias x R$ ${valorDiaria} = R$ ${valorFinal}%0A%0ADADOS DO LOCATÁRIO:%0ANome: ${nomeCliente}%0ACPF: ${cpf}%0AE-mail: ${email}%0AWhatsApp: ${whatsapp}%0AEndereço: ${endereco}%0ACEP: ${cep}%0A%0APAGAMENTO:%0ASerá realizado via PIX.`;
+                                return `https://wa.me/558386667429?text=${msg}`;
+                              })()}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <Button className="w-full bg-green-400 text-white hover:bg-green-500">Pix</Button>
+                            </a>
                           </div>
                         </DialogContent>
                       </Dialog>
